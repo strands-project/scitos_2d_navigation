@@ -1,6 +1,22 @@
 <launch>
+  <arg name="use_head_xtion" default="false"/>
+  <group if="$(arg use_head_xtion)">
+	<node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
 
-	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+	<!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
+	<node pkg="nodelet" type="nodelet" name="voxel_grid" args="load pcl/VoxelGrid pcl_manager" output="screen">
+	  <remap from="~input" to="/head_xtion/depth/points" />
+	  <remap from="~output" to="/head_xtion/depth/voxel_filtered_points" />
+	  <rosparam>input_frame: /base_footprint
+filter_field_name: z
+filter_limit_min: 0.01
+filter_limit_max: 2
+filter_limit_negative: False
+leaf_size: 0.08</rosparam>
+	</node>
+  </group>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
     <param name="footprint_padding" value="0.01" />
     <param name="controller_frequency" value="10.0" />
     <param name="controller_patience" value="100.0" />
@@ -10,7 +26,12 @@
     <rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" command="load" />
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+
+	<param name="observation_sources" value="laser head_xtion"/>
+
     <rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/dwa_planner_ros.yaml" command="load" />
-	</node>
+
+
+  </node>
 
 </launch>
