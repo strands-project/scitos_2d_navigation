@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>scitos_navigation</name>
+  <version>0.0.1</version>
+  <description>
+	The scitos_navigation stack holds common configuration options for running the navigation stack on a Scitos robot.
+  </description>
+
+  <maintainer email="nilsbore@gmail.com">Nils Bore</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://github.com/strands-project/scitos_navigation</url>
+
+  <author email="nilsbore@gmail.com">Nils Bore</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>scitos_2d_navigation</run_depend>
+  <run_depend>octomap_launch</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
