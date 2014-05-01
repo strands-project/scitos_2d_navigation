@@ -26,6 +26,14 @@
         <param name="cutoff" value="50.0"/>
         <param name="cutoff_z" value="0.3"/>
     </node>
+    
+    <!-- This node removes the desired cutoff pixels from the head cloud edges -->
+    <node pkg="scitos_2d_navigation" type="remove_edges_cloud" name="remove_edges_cloud_head" output="screen">
+        <param name="input" value="/move_base/head_subsampled"/>
+        <param name="output" value="/move_base/head_obstacle"/>
+        <param name="cutoff" value="50.0"/>
+        <param name="cutoff_z" value="0.3"/>
+    </node>
 
     <!-- This node adds a synthetic wall at the edge of raytrace range to remove high objects -->
     <!--
