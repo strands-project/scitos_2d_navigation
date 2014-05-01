@@ -31,7 +31,7 @@ obstacle_layer:
   unknown_threshold: 9
   mark_threshold: 0
   
-  observation_sources: laser point_cloud_sensor clear_sensor
+  observation_sources: laser point_cloud_sensor clear_sensor head_cloud_sensor head_clear_sensor
   
   laser: {sensor_frame: base_laser_link, data_type: LaserScan, topic: scan, marking: true, clearing: true}
   
