@@ -33,7 +33,6 @@
         <param name="input" value="/move_base/head_subsampled"/>
         <param name="obstacle_output" value="/move_base/head_clearing"/>
         <param name="floor_output" value="/move_base/head_cliff"/>
-        <param name="camera_frame" value="head_xtion_rgb_optical_frame"/>
         <!-- Distance below floor that's counted as stair -->
         <param name="below_threshold" value="0.05"/>
     </node>
