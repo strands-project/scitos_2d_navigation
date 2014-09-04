@@ -1,9 +1,6 @@
 <launch>
     <arg name="machine" default="localhost" />
     <arg name="user" default="" />
-    <arg name="with_camera" default="false"/>
-    <arg name="camera" default="chest_xtion"/>
-    <arg name="camera_ip" default="localhost"/>
     <arg name="map"/>
     <arg name="with_no_go_map" default="false"/>
 	<arg name="with_mux" default="false" />
@@ -29,13 +26,7 @@
     </include>
 
     <!-- launch move base -->
-    <include file="$(find scitos_2d_navigation)/launch/move_base_3d.launch" if="$(arg with_camera)">
-        <arg name="camera" value="$(arg camera)"/>
-        <arg name="machine"  value="$(arg camera_ip)"/>
-        <arg name="user"  value="$(arg user)"/>
-		<arg name="with_mux" value="$(arg with_mux)"/>
-    </include>
-    <include file="$(find scitos_2d_navigation)/launch/move_base.launch" unless="$(arg with_camera)">
+    <include file="$(find scitos_2d_navigation)/launch/move_base.launch">
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
 		<arg name="with_mux" value="$(arg with_mux)"/>
