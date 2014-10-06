@@ -4,10 +4,7 @@
   <version>0.0.2</version>
   <description>
     This package contains components for using the ROS move base together
-    with the Scitos G5 robot. There is options for running obstacle avoidance
-    both with only laser and with an additional depth-sensing camera
-    mounted in front. The additional nodes in the package are for processing
-    the incoming clouds from the camera for obstacle avoidance.
+    with the Scitos G5 robot.
   </description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -30,18 +27,8 @@
   <!-- The *_depend tags are used to specify dependencies -->
   <!-- Dependencies can be catkin packages or system dependencies -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>pcl_ros</build_depend>
-  <build_depend>libpcl-all-dev</build_depend>
-  <build_depend>tf</build_depend>
-  <run_depend>sensor_msgs</run_depend>
-  <run_depend>roscpp</run_depend>
-  <run_depend>std_msgs</run_depend>
-  <run_depend>pcl_ros</run_depend>
-  <run_depend>libpcl-all</run_depend>
-  <run_depend>tf</run_depend>
+  <build_depend>move_base</build_depend>
+  <run_depend>move_base</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
