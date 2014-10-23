@@ -2,8 +2,8 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.4 (2014-10-23)
+------------------
 * Merge branch 'release_cleanup2' of https://github.com/nilsbore/scitos_2d_navigation into nilsbore-release_cleanup2
   Conflicts:
   launch/move_base_3d.launch
