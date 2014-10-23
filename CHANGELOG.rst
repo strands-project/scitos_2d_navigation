@@ -2,6 +2,36 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'release_cleanup2' of https://github.com/nilsbore/scitos_2d_navigation into nilsbore-release_cleanup2
+  Conflicts:
+  launch/move_base_3d.launch
+  scitos_move_base_params_3d/costmap_common_params.yaml
+  scitos_move_base_params_3d/local_costmap_params.yaml
+  src/remove_edges_cloud.cpp
+* Merge branch 'hydro-devel' of https://github.com/strands-project/scitos_2d_navigation into hydro-devel
+* Merge pull request `#40 <https://github.com/strands-project/scitos_2d_navigation/issues/40>`_ from nilsbore/newtry
+  This adds an extra obstacle layer in the local costmap that can be used for backtracking
+* Changed to only depend on move_base in package.xml as well
+* Removed unnecessary dependencies, now only relying on move_base.
+* Merge remote-tracking branch 'upstream/hydro-devel' into release_cleanup2
+* Removed the build configuration from the Cmake file
+* Removed the stuff that is now in strands_movebase
+* Forgot to remove the cliff sensor, which is not there anymore
+* Changed some thresholds mostly
+* Removed cliff detection from the head sensor since this can cause problems
+* Forgot to remove the sensor inputs from the normal obstacle layer
+* Only having head observations in one layer now
+* Changed the maximum height of obstacles added from head so that they can be cleared from chest sensor
+* Merged the latest changes
+* Merge remote-tracking branch 'upstream/hydro-devel' into hydro-devel
+* Added the head sensor the be activated when needed
+* Added the sensors to the planning
+* Changed heights of head sensor
+* Added the head sensor that will be publishing only when the robot gets stuck
+* Contributors: Marc Hanheide, Nils Bore, Rares Ambrus, strands
+
 0.0.3 (2014-10-23)
 ------------------
 * Merge pull request `#46 <https://github.com/strands-project/scitos_2d_navigation/issues/46>`_ from strands-project/install_targets
