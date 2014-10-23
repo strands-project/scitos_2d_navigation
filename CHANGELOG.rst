@@ -2,8 +2,8 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2014-10-23)
+------------------
 * Merge pull request `#46 <https://github.com/strands-project/scitos_2d_navigation/issues/46>`_ from strands-project/install_targets
   added install targets to work towards `#43 <https://github.com/strands-project/scitos_2d_navigation/issues/43>`_
 * added install targets to work towards `#43 <https://github.com/strands-project/scitos_2d_navigation/issues/43>`_
