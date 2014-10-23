@@ -4,15 +4,15 @@ project(scitos_2d_navigation)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED roscpp sensor_msgs std_msgs pcl_ros tf)
+find_package(catkin REQUIRED COMPONENTS move_base)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-find_package(PCL REQUIRED)
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
+#find_package(PCL REQUIRED)
+#nclude_directories(${PCL_INCLUDE_DIRS})
+#link_directories(${PCL_LIBRARY_DIRS})
+#add_definitions(${PCL_DEFINITIONS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -65,38 +65,20 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
+#include_directories(
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 ## Declare a cpp library
 #add_library(noise_voxel_grid src/noise_voxel_grid.cpp)
-add_library(noise_approximate_voxel_grid src/noise_approximate_voxel_grid.cpp)
+#add_library(noise_approximate_voxel_grid src/noise_approximate_voxel_grid.cpp)
 
 ## Declare a cpp executable
-add_executable(subsample_cloud src/subsample_cloud.cpp)
-add_executable(remove_edges_cloud src/remove_edges_cloud.cpp)
-add_executable(mirror_floor_points src/mirror_floor_points.cpp)
+#add_executable(subsample_cloud src/subsample_cloud.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(scitos_2d_navigation_node scitos_2d_navigation_generate_messages_cpp)
-
-target_link_libraries(noise_approximate_voxel_grid
-  ${PCL_LIBRARIES}
-)
-
-target_link_libraries(subsample_cloud
-  ${catkin_LIBRARIES} ${PCL_LIBRARIES} noise_approximate_voxel_grid
-)
-
-target_link_libraries(remove_edges_cloud
-  ${catkin_LIBRARIES} ${PCL_LIBRARIES}
-)
-
-target_link_libraries(mirror_floor_points
-  ${catkin_LIBRARIES} ${PCL_LIBRARIES}
-)
 
 #############
 ## Install ##
@@ -113,24 +95,19 @@ target_link_libraries(mirror_floor_points
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS subsample_cloud remove_edges_cloud mirror_floor_points noise_approximate_voxel_grid
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(TARGETS subsample_cloud remove_edges_cloud mirror_floor_points noise_approximate_voxel_grid
+#  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 install(DIRECTORY launch/
-	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
 install(DIRECTORY scitos_move_base_params/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scitos_move_base_params
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scitos_move_base_params
 )
-
-install(DIRECTORY scitos_move_base_params_3d/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scitos_move_base_params_3d
-)
-
 
 ## Mark cpp header files for installation
 # install(DIRECTORY launch/${PROJECT_NAME}/
@@ -140,10 +117,10 @@ install(DIRECTORY scitos_move_base_params_3d/
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-install(FILES
-	src/noise_approximate_voxel_grid.h
-	DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-)
+#install(FILES
+#  src/noise_approximate_voxel_grid.h
+#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#)
 
 #############
 ## Testing ##
