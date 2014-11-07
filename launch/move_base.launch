@@ -3,7 +3,7 @@
 	<arg name="user" default="" />
 	<arg name="with_mux" default="false" />
 
-	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true" />
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="$(env ROS_ENV_LOADER)" user="$(arg user)" default="true" />
 
 
 	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true" unless="$(arg with_mux)">
