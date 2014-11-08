@@ -6,7 +6,7 @@
 	<arg name="with_mux" default="false" />
     <arg name="no_go_map"/>
 
-    <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(env ROS_ENV_LOADER)" user="$(arg user)" default="true"/>
+    <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true"/>
 
     <!-- lanch map server -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
