@@ -2,8 +2,8 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.5 (2014-11-09)
+------------------
 * Merge pull request `#51 <https://github.com/strands-project/scitos_2d_navigation/issues/51>`_ from Jailander/hydro-devel
   final and tested version of loader
 * final and tested version of loader
