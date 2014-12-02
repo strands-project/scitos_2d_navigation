@@ -1,9 +1,6 @@
 global_frame: /map
 robot_base_frame: /base_link
 
-  
-map_type: voxel
-publish_voxel_map: false
 
 
 footprint: [[-0.30,-0.32], # Back side right
