@@ -1,8 +1,9 @@
 global_costmap:
   update_frequency: 5.0
+  publish_frequency: 0.5
   static_map: true
   rolling_window: false
-  plugins:  
+  plugins:
     - {name: map_layer, type: "costmap_2d::StaticLayer"}
     - {name: no_go_layer, type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer, type: "costmap_2d::VoxelLayer"}
