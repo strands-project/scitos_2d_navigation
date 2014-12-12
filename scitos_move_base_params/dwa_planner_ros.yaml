@@ -22,9 +22,7 @@ DWAPlannerROS:
   # if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
   latch_xy_goal_tolerance: true
  
- 
 
- 
   sim_time: 2.1
   
 
