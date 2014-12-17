@@ -2,8 +2,8 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2014-12-17)
+------------------
 * Merge pull request `#53 <https://github.com/strands-project/scitos_2d_navigation/issues/53>`_ from bfalacerda/hydro-devel
   same params as the new strands_movebase. merging
 * mirroring strands movebase params where possible
