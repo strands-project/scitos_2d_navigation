@@ -2,6 +2,18 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#53 <https://github.com/strands-project/scitos_2d_navigation/issues/53>`_ from bfalacerda/hydro-devel
+  same params as the new strands_movebase. merging
+* mirroring strands movebase params where possible
+* new nav params
+* Merge pull request `#52 <https://github.com/strands-project/scitos_2d_navigation/issues/52>`_ from BFALacerda/hydro-devel
+  getting config of common costmap params to mirror strands_movebase
+* removing params that arent used
+* getting config of common costmap params to mirror strands_movebase
+* Contributors: BFALacerda, Bruno Lacerda, bfalacerda
+
 0.0.5 (2014-11-09)
 ------------------
 * Merge pull request `#51 <https://github.com/strands-project/scitos_2d_navigation/issues/51>`_ from Jailander/hydro-devel
