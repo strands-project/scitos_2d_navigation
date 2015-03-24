@@ -2,6 +2,17 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#56 <https://github.com/strands-project/scitos_2d_navigation/issues/56>`_ from strands-project/local_mb_params
+  Use scitos_2d_navigation's own parameters.
+* Use scitos_2d_navigation's own parameters.
+  Switches to use the `scitos_2d_navigation` parameters for move_base instead of linking to the `strands_movebase` copy. I think this is tidier than the alternative of adding a dependency on strands_movebase.
+* Merge pull request `#54 <https://github.com/strands-project/scitos_2d_navigation/issues/54>`_ from Jailander/hydro-devel
+  avoiding planning through unknown areas
+* avoiding planning through unknown areas
+* Contributors: Bruno Lacerda, Chris Burbridge, Jaime Pulido Fentanes, Marc Hanheide
+
 0.0.6 (2014-12-17)
 ------------------
 * Merge pull request `#53 <https://github.com/strands-project/scitos_2d_navigation/issues/53>`_ from bfalacerda/hydro-devel
