@@ -2,8 +2,8 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.7 (2015-03-24)
+------------------
 * Merge pull request `#56 <https://github.com/strands-project/scitos_2d_navigation/issues/56>`_ from strands-project/local_mb_params
   Use scitos_2d_navigation's own parameters.
 * Use scitos_2d_navigation's own parameters.
