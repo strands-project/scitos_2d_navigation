@@ -23,12 +23,15 @@ DWAPlannerROS:
   latch_xy_goal_tolerance: true
  
 
-  sim_time: 2.1
+  # sim_time old: 2.1; ROS default 1.7 
+  # (observation: using a smaller value lets the robot stay more accurately on its planned global trajectory, eg the robot almost turns on the spot when doing a 180 turn (similar behaviour when reaching a goal) => less problems with door passing [at least in simulation]). 
+  sim_time: 0.8
   
 
 #cost =  path_distance_bias * (distance to path from the endpoint of the trajectory in meters)  + goal_distance_bias * (distance to local goal from the endpoint of the trajectory in meters)  + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
-  path_distance_bias: 32.0 #default:32, previous:5
-  goal_distance_bias: 24.0 #default:24, previous:9
+  # by increasing the ratio between path distance and (local) goal distance the robot stays better on its global plan (by which it will meet its local goals anyway). 
+  path_distance_bias: 1.0 # old: 32.0 #default:32
+  goal_distance_bias: 0.5 # old: 24.0 #default:24
   occdist_scale: 0.01 #default:0.01
 
   
