@@ -2,6 +2,13 @@
 Changelog for package scitos_2d_navigation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#58 <https://github.com/strands-project/scitos_2d_navigation/issues/58>`_ from kunzel/hydro-devel
+  adjust dwa planner params. as a result, the robot follows better its …
+* adjust dwa planner params. as a result, the robot follows better its global path (instead of following the arcs of the local planner)
+* Contributors: Lars Kunze, Marc Hanheide
+
 0.0.7 (2015-03-24)
 ------------------
 * Merge pull request `#56 <https://github.com/strands-project/scitos_2d_navigation/issues/56>`_ from strands-project/local_mb_params
