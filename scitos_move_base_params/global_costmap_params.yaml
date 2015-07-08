@@ -7,6 +7,7 @@ global_costmap:
     - {name: map_layer, type: "costmap_2d::StaticLayer"}
     - {name: no_go_layer, type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer, type: "costmap_2d::VoxelLayer"}
+    - {name: proxemic_layer, type: "social_navigation_layers::ProxemicLayer"}
     - {name: passing_layer, type: "social_navigation_layers::PassingLayer"}
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
     
