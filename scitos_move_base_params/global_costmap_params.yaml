@@ -1,6 +1,6 @@
 global_costmap:
   update_frequency: 5.0
-  publish_frequency: 0.5
+  publish_frequency: 5.0
   static_map: true
   rolling_window: false
   plugins:
@@ -8,4 +8,5 @@ global_costmap:
     - {name: no_go_layer, type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer, type: "costmap_2d::VoxelLayer"}
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
-    
+    - {name: proxemic_layer, type: "social_navigation_layers::ProxemicLayer"}
+    - {name: passing_layer, type: "social_navigation_layers::PassingLayer"}
