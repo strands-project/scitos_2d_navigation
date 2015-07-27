@@ -14,6 +14,7 @@
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params_social.yaml" if="$(arg with_social_layer)" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" unless="$(arg with_social_layer)" command="load" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/plugin_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/local_costmap_params.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/dwa_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/nav_fn_ros.yaml" command="load" />
@@ -26,6 +27,7 @@
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params_social.yaml" if="$(arg with_social_layer)" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" unless="$(arg with_social_layer)" command="load" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/plugin_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/local_costmap_params.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/dwa_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/nav_fn_ros.yaml" command="load" />
