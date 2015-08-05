@@ -49,7 +49,6 @@ PluginPlannerROS:
     - PathAlign
     - PathDist
     - GoalDist
-    - MapGrid
 
   PathAlign:
     scale: 32.0
