@@ -1,5 +1,4 @@
-base_global_planner: global_planner/GlobalPlanner
-base_local_planner: plugin_local_planner/PluginPlannerROS
+base_local_planner: dwa_local_planner/DWAPlannerROS
 controller_frequency: 10.0
 controller_patience: 15.0
 planner_frequency: 0.5
