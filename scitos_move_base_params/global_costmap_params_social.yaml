@@ -10,3 +10,9 @@ global_costmap:
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
     - {name: proxemic_layer, type: "social_navigation_layers::ProxemicLayer"}
     - {name: passing_layer, type: "social_navigation_layers::PassingLayer"}
+  proxemic_layer:
+    amplitude: 150.0
+    covariance: 0.3
+    factor: 7.0
+  passing_layer:
+    enabled: false
