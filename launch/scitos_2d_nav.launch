@@ -3,7 +3,8 @@
     <arg name="user" default="" />
     <arg name="map"/>
     <arg name="with_no_go_map" default="false"/>
-	<arg name="with_mux" default="false" />
+    	<arg name="with_mux" default="false" />
+    	<arg name="with_social_layer" default="false" />
     <arg name="no_go_map"/>
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true"/>
@@ -30,6 +31,7 @@
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
 		<arg name="with_mux" value="$(arg with_mux)"/>
+		<arg name="with_social_layer" value="$(arg with_social_layer)"/>
     </include>
 
 </launch>

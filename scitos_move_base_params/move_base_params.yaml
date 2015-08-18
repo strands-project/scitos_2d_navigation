@@ -14,4 +14,3 @@ conservative_reset:
 aggressive_reset:
   layer_names: ["obstacle_layer"]
   reset_distance: 0.0
-  

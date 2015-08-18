@@ -1,29 +1,32 @@
 <launch>
 	<arg name="machine" default="localhost" />
 	<arg name="user" default="" />
+	<arg name="with_social_layer" default="false" />
 	<arg name="with_mux" default="false" />
 
 	<machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true" />
 
 
-	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true" unless="$(arg with_mux)">
+	<node pkg="move_base"  type="move_base" respawn="false" name="move_base" args="with_social_layer" output="screen" clear_params="true" unless="$(arg with_mux)">
 		<!-- default:20.0. with this value dwa planner fails to find a valid plan a lot more -->
         	<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/move_base_params.yaml" command="load"/>
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params_social.yaml" if="$(arg with_social_layer)" command="load" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" unless="$(arg with_social_layer)" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/local_costmap_params.yaml" command="load" />
-		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/dwa_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/nav_fn_ros.yaml" command="load" />
 	</node>
-	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true" if="$(arg with_mux)">
+	<node pkg="move_base" type="move_base" respawn="flase" name="move_base" args="with_social_layer" output="screen" clear_params="true" if="$(arg with_mux)">
 		<!-- default:20.0. with this value dwa planner fails to find a valid plan a lot more -->
-        <remap from="/cmd_vel" to="/cmd_vel_mux/input/navigation"/>
+        	<remap from="/cmd_vel" to="/cmd_vel_mux/input/navigation"/>
         	<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/move_base_params.yaml" command="load"/>
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params_social.yaml" if="$(arg with_social_layer)" command="load" />
+		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" unless="$(arg with_social_layer)" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/local_costmap_params.yaml" command="load" />
-		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/global_costmap_params.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/dwa_planner_ros.yaml" command="load" />
 		<rosparam file="$(find scitos_2d_navigation)/scitos_move_base_params/nav_fn_ros.yaml" command="load" />
 	</node>
